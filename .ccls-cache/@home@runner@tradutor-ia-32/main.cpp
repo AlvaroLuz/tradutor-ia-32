@@ -378,7 +378,7 @@ int main() {
 	int argc = 2;
 	std::vector<std::string> argv = {"teste_char.asm"};
 	if(argc == 2){
-      std::string aux(argv[0]);
+      std::string aux(argv[1]);
       if (open_file(aux)){
         auto temp =  Tradutor(argv[0]).get_traducao();
         std::ofstream arquivo(parse(aux,".")[0]+".s");

@@ -10,7 +10,7 @@
 
 /*-----------------------------------------------------------------------------------------
 		Utils
-------------------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------*/
 std::vector<std::string> parse(std::string s, std::string delimiter) {
 	std::vector<std::string> parsed;
 	size_t pos = 0;
@@ -374,13 +374,11 @@ public:
 
   	std::vector<std::string> get_traducao() { return this->codigo; }
 };
-int main() { 
-	int argc = 2;
-	std::vector<std::string> argv = {"teste_char.asm"};
+int main(int argc, char** argv) { 
 	if(argc == 2){
       std::string aux(argv[1]);
       if (open_file(aux)){
-        auto temp =  Tradutor(argv[0]).get_traducao();
+        auto temp =  Tradutor(argv[1]).get_traducao();
         std::ofstream arquivo(parse(aux,".")[0]+".s");
         for (auto i : temp){
         	arquivo<< i<<"\n";
@@ -392,5 +390,8 @@ int main() {
         return 0;
       }
     }
+	else{
+		std::cout<<"ERRO: Numero errado de parametros\n";
+	}
 	return 0; 
 }
