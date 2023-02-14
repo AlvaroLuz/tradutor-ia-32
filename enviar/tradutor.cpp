@@ -367,9 +367,7 @@ public:
 		codigo.insert(codigo.end(),text.begin(), text.end());
 		codigo.insert(codigo.end(),data.begin(), data.end());
 		codigo.insert(codigo.end(),bss.begin(), bss.end());
-		for (auto i: codigo){
-			std::cout<< i<< "\n";
-		}
+		
   	}
 
   	std::vector<std::string> get_traducao() { return this->codigo; }
