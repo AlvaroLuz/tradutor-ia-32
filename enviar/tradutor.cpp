@@ -228,7 +228,7 @@ class Tradutor {
 			}
 			else if(ins == "MUL" || ins == "DIV"){
 				text.push_back(newline + "cdq");
-				newline += (ins == "MUL"?newline+"imul [":"\tidiv [") + par+ "]";
+				newline += (ins == "MUL"?newline+"imul dword [":"\tidiv dword [") + par+ "]";
 			}
 			else if(ins == "JMP"){
 				newline +=  "jmp "+ par;
